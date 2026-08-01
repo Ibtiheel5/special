@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday Adham 🌙</title>
+<meta name="description" content="A little surprise made with love, for Adham.">
+
+<!-- Google Fonts: a romantic serif for the letter, a soft rounded sans for UI, a handwritten script for quotes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       AMBIENT BACKGROUND LAYER
+       Lives behind every section: the night sky, the moon glow,
+       the stars and the drifting hearts. Fixed so it never scrolls.
+  ============================================================= -->
+  <div class="sky" aria-hidden="true">
+    <div class="moonlight"></div>
+    <div id="stars" class="stars"></div>
+    <div id="hearts-field" class="hearts-field"></div>
+  </div>
+
+  <!-- ============================================================
+       SCREEN 1 — OPENING
+  ============================================================= -->
+  <section id="opening" class="screen opening">
+    <div class="moon-wrap">
+      <div class="moon">
+        <div class="crater c1"></div>
+        <div class="crater c2"></div>
+        <div class="crater c3"></div>
+      </div>
+    </div>
+
+    <h1 class="opening-title">Happy Birthday Adham <span class="heart-mark">🤍</span></h1>
+    <p class="opening-subtitle">A little surprise made with love...</p>
+
+    <button id="open-gift" class="glow-button">
+      <span>Open your gift</span> <span class="moon-emoji">🌙</span>
+    </button>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 2 — THE LETTER
+  ============================================================= -->
+  <section id="letter" class="screen letter-screen reveal-target">
+    <div class="glass-card letter-card">
+      <p class="eyebrow">for a birthday, from the heart</p>
+      <h2 class="letter-title">For Adham <span class="pink">❤️</span></h2>
+
+      <p id="letter-text" class="letter-text" aria-live="polite"></p>
+
+      <!-- invisible full text, kept for accessibility / no-JS fallback -->
+      <noscript>
+        <p class="letter-text">
+          Happy Birthday Adham.<br><br>
+          I know life changes and sometimes things don't stay the same, but some people keep a special place in our hearts.<br><br>
+          Today I just wanted to remind you how much you meant to me and how grateful I am for every moment, every laugh, every conversation, and every beautiful memory we shared.<br><br>
+          I hope this new year of your life brings you happiness, success, peace, and everything your heart wishes for.<br><br>
+          No matter where life takes us, I will always appreciate the person you were in my life.<br><br>
+          Happy Birthday.<br>
+          Take care of yourself. You will always be someone special to me. ❤️
+        </p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 3 — MEMORY CONSTELLATION
+  ============================================================= -->
+  <section id="memories" class="screen memories-screen reveal-target">
+    <p class="section-quote">Some memories don't disappear... they become part of us.</p>
+
+    <div class="constellation-wrap">
+      <svg id="constellation" viewBox="0 0 600 420" class="constellation" aria-hidden="true">
+        <!-- lines are drawn in first, filled in by script.js's dash animation -->
+        <g class="const-lines">
+          <line x1="80"  y1="320" x2="150" y2="200"></line>
+          <line x1="150" y1="200" x2="230" y2="230"></line>
+          <line x1="230" y1="230" x2="300" y2="120"></line>
+          <line x1="300" y1="120" x2="380" y2="180"></line>
+          <line x1="380" y1="180" x2="460" y2="110"></line>
+          <line x1="460" y1="110" x2="520" y2="190"></line>
+          <line x1="230" y1="230" x2="330" y2="300"></line>
+          <line x1="330" y1="300" x2="430" y2="280"></line>
+        </g>
+        <g class="const-stars">
+          <circle cx="80"  cy="320" r="4"></circle>
+          <circle cx="150" cy="200" r="5"></circle>
+          <circle cx="230" cy="230" r="6"></circle>
+          <circle cx="300" cy="120" r="4"></circle>
+          <circle cx="380" cy="180" r="5"></circle>
+          <circle cx="460" cy="110" r="6"></circle>
+          <circle cx="520" cy="190" r="4"></circle>
+          <circle cx="330" cy="300" r="4"></circle>
+          <circle cx="430" cy="280" r="5"></circle>
+        </g>
+      </svg>
+    </div>
+
+    <div class="quotes-wrap">
+      <p class="handwritten-quote">"a laugh that made ordinary days feel lighter"</p>
+      <p class="handwritten-quote">"conversations that turned into some of my favorite memories"</p>
+      <p class="handwritten-quote">"a kind of friendship you don't forget"</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SCREEN 4 — FINAL WORDS
+  ============================================================= -->
+  <section id="final" class="screen final-screen reveal-target">
+    <p class="final-line">Maybe some stories need time...</p>
+    <p class="final-line">Maybe some people are simply unforgettable.</p>
+
+    <div class="heartbeat" aria-hidden="true">❤️</div>
+
+    <h2 class="final-title">Happy Birthday Adham <span class="moon-emoji">🌙</span><span class="pink">❤️</span></h2>
+  </section>
+
+  <!-- ============================================================
+       FLOATING MUSIC PLAYER — appears once the gift is opened
+  ============================================================= -->
+  <button id="music-toggle" class="music-button hidden" aria-pressed="false">
+    <span class="music-icon">🌙</span>
+    <span class="music-label">Our song</span>
+  </button>
+  <audio id="bg-audio" src="assets/el_qamar_dyali.mp3" loop preload="none"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
