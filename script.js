@@ -126,12 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
      reads like it's being written in real time.
   ----------------------------------------------------------- */
   const letterParagraphs = [
-    'Happy Birthday Adham.',
-    "I know life changes and sometimes things don't stay the same, but some people keep a special place in our hearts.",
-    'Today I just wanted to remind you how much you meant to me and how grateful I am for every moment, every laugh, every conversation, and every beautiful memory we shared.',
-    'I hope this new year of your life brings you happiness, success, peace, and everything your heart wishes for.',
-    'No matter where life takes us, I will always appreciate the person you were in my life.',
-    'Happy Birthday.\nTake care of yourself. You will always be someone special to me. ❤️'
+    "Happy Birthday Adham 🤍🌙",
+    "I know life changes and sometimes things don't stay the same, but some people are not easy to forget. Some people leave a piece of themselves in our hearts, and you are one of those people for me.",
+    "Today, I couldn't let this day pass without telling you how much you mean to me. I want you to know that having you in my life was one of the most beautiful things that ever happened to me.",
+    "You were not just someone I loved… you were the person who made my days brighter, the person I wanted to share my happiness with, my little moments with, and my dreams with. You were the person I cared about deeply, and I loved you with a sincere heart.",
+    "I will always remember our conversations, our laughs, the little things that only we understood, and all those moments that made me smile. Those memories are precious to me, and I will always be grateful that I got to live them with you.",
+    "Sometimes I think about all the things we still wanted to do together… the places we wanted to discover, the moments we imagined, and the memories we hoped to create, especially when we would finally be together in Tunisia. Maybe life had a different plan for us, but those dreams will always remain a beautiful part of my heart.",
+    "I hope this new year of your life brings you happiness, success, peace, and all the beautiful things you deserve. I hope you always feel loved and appreciated, because you truly deserve that.",
+    "No matter where life takes us, I will never regret loving you. I will always be thankful for the person you were in my life and for the beautiful chapter we shared together.",
+    "Happy Birthday, Adham. 🌙❤️\nTake care of yourself. You will always have a special place in my heart."
   ];
 
   let typewriterStarted = false;
@@ -154,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     target.classList.add('is-typing');
     const fullText = letterParagraphs.join('\n\n');
     let i = 0;
-    const speed = 26; // ms per character — gentle, readable pace
+    const speed = 14; // ms per character — brisk enough for the longer letter
 
     (function typeChar() {
       target.textContent = fullText.slice(0, i);

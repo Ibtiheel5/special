@@ -410,7 +410,7 @@ body.gift-opened .moon{
   color: var(--ink-white);
   text-align: left;
   white-space: pre-wrap;
-  min-height: 12em;
+  min-height: 20em;
 }
 
 /* blinking caret shown while the typewriter is still "writing" */
