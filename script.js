@@ -36,6 +36,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------------------------------------
+     1b. SHOOTING STARS
+     A rare, gentle streak across the sky — atmosphere, not a
+     light show. Fires occasionally on a random interval.
+  ----------------------------------------------------------- */
+  function spawnShootingStar() {
+    const layer = document.getElementById('shooting-stars');
+    if (!layer) return;
+
+    const star = document.createElement('div');
+    star.className = 'shooting-star';
+    star.style.top = `${5 + Math.random() * 35}%`;
+    star.style.left = `${40 + Math.random() * 55}%`;
+
+    layer.appendChild(star);
+    setTimeout(() => star.remove(), 1800);
+  }
+
+  function scheduleShootingStars() {
+    if (prefersReducedMotion) return;
+    const next = 6000 + Math.random() * 9000; // every 6–15s, irregular
+    setTimeout(() => {
+      spawnShootingStar();
+      scheduleShootingStars();
+    }, next);
+  }
+
+  /* -----------------------------------------------------------
      2. FLOATING HEARTS
      A slow, sparse drift of small hearts rising through the sky.
      Kept subtle: this is atmosphere, not confetti.
@@ -116,8 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = document.getElementById('letter-text');
     if (!target) return;
 
+    const signature = document.getElementById('letter-signature');
+
     if (prefersReducedMotion) {
       target.textContent = letterParagraphs.join('\n\n');
+      if (signature) signature.classList.add('is-visible');
       return;
     }
 
@@ -133,6 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(typeChar, speed);
       } else {
         target.classList.remove('is-typing');
+        // the signature settles in softly once the letter is fully written
+        if (signature) setTimeout(() => signature.classList.add('is-visible'), 300);
       }
     })();
   }
@@ -197,4 +229,5 @@ document.addEventListener('DOMContentLoaded', () => {
   ----------------------------------------------------------- */
   buildStarfield();
   initRevealObserver();
+  scheduleShootingStars();
 });
